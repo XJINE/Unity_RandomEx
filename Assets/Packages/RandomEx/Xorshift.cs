@@ -5,7 +5,7 @@
 
 using System;
 
-public class XorshiftBase
+public class Xorshift
 {
     #region Field
 
@@ -20,21 +20,21 @@ public class XorshiftBase
 
     #region Constructor
 
-    public XorshiftBase()
+    public Xorshift()
         : this(Guid.NewGuid().GetHashCode())
     {
     }
 
-    public XorshiftBase(int seed)
+    public Xorshift(int seed)
         : this((uint)seed)
     {
     }
 
-    public XorshiftBase(uint seed)
+    public Xorshift(uint seed)
     {
-        x = XorshiftBase.SEED_X;
-        y = XorshiftBase.SEED_Y;
-        z = XorshiftBase.SEED_Z;
+        x = Xorshift.SEED_X;
+        y = Xorshift.SEED_Y;
+        z = Xorshift.SEED_Z;
         w = seed;
     }
 
