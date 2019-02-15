@@ -1,6 +1,6 @@
 # Unity_RandomEx
 
-Include random's utility functions or any other logic like Xorshift.
+Provides various random functions.
 
 ## Import to Your Project
 
@@ -10,27 +10,28 @@ You can import this asset from UnityPackage.
 
 ## How to Use
 
-There are some methods to get random.
+There are some methods and properties to get random value.
 
-
-| Method           | Description                                        |
+| Property         | Description                                        |
 |:-----------------|:---------------------------------------------------|
 | Value            | Return 0 ~ 1 value.                                |
-| Index            | Return index from array of rates.                  |
+| Radian           | Return 0 ~ 360 angle value in radian.              |
 | Sign             | Return -1 or 1.                                    |
-| Range            | Return min ~ max value. (int type exclusive max)   |
-| OnUnitCircle     | Return value on unit circle in x,y or Vector2.     |
-| InsideUnitCircle | Return value inside unit circle in x,y or Vector2. |
-| OnUnitSphere     | Return value on unit sphere in x,y or Vector3.     |
-| InsideUnitSphere | Return value inside unit sphere in x,y or Vector3. |
-| ColorHSV         | Return color which has random HSV parameter.       |
 
-Almost basic class has these methos.
-And ``System.~`` files are not dependent on Unity. These works on a native C#.
+| Method                                  | Description                                        |
+|:----------------------------------------|:---------------------------------------------------|
+| Index                                   | Return index from array of rates.                  |
+| Range(int\|float\|Vector\|Rect\|Bounds) | Return min ~ max value. (int type exclusive max)   |
+| OnUnitCircle(float\|Vector)             | Return value on unit circle in x,y or Vector2.     |
+| InsideUnitCircle(float\|Vector)         | Return value inside unit circle in x,y or Vector2. |
+| OnUnitSphere(float\|Vector)             | Return value on unit sphere in x,y or Vector3.     |
+| InsideUnitSphere(float\|Vector)         | Return value inside unit sphere in x,y or Vector3. |
 
-## Xorshift
+## Replace Random Value Generator
 
-You can make some instance of Xorshift random generator.
-Xorshift is fast algorithm to make good random value.
+``ValueFunc`` field provides function which returns random value.
+You could replace this function if you want. The function must be return 0 ~ 1 value.
 
-But it has a problem. A Little biased is occurred in a small number of trials.
+One of the samples uses Xorshift as an example.
+
+- https://github.com/XJINE/CS_Xorshift

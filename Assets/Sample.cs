@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomExSample : MonoBehaviour
+public class Sample : MonoBehaviour
 {
     public List<PrimitiveType> primitiveTypes;
 
